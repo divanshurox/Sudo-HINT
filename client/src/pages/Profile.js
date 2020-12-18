@@ -119,7 +119,7 @@ const Profile = () => {
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
-            backgroundColor: "#2b3856",
+            backgroundColor: "transparent",
           }}
         >
           <img
@@ -161,7 +161,7 @@ const Profile = () => {
           style={{
             height: "300px",
             borderRadius: 20,
-            backgroundColor: "#2b3856",
+            backgroundColor: "transparent",
             justifyContent: "center",
             alignItems: "center",
             padding: "20px 10px",
@@ -189,7 +189,7 @@ const Profile = () => {
           style={{
             height: "300px",
             borderRadius: 20,
-            backgroundColor: "#2b3856",
+            backgroundColor: "transparent",
             justifyContent: "center",
             alignItems: "center",
             marginTop: 40,
