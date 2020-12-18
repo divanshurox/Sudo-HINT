@@ -4,6 +4,7 @@ import Nav from "../components/Nav/Nav";
 import Home from "../pages/Home";
 import Profile from "../pages/Profile";
 import PeerCodeRoom from "../pages/PeerCodeRoom";
+import Forum from "../pages/Forum";
 import Route from "./Route";
 
 const Routes = () => {
@@ -13,6 +14,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
+        <Route exact path="/forum" component={Forum} />
         <Route exact path="/coderoom" component={PeerCodeRoom} />
       </Switch>
     </div>
