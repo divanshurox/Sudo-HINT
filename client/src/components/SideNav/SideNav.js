@@ -4,6 +4,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import CodeIcon from "@material-ui/icons/Code";
 import ForumIcon from "@material-ui/icons/Forum";
 import GestureIcon from "@material-ui/icons/Gesture";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   flexCol: {
@@ -19,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "rgb(211,211,211, 0.2)",
       borderRadius: "10px",
+      cursor: "pointer",
     },
     // justifyContent: "space-evenly",
     // margin: "1rem 0 0 0",
@@ -31,22 +33,38 @@ const useStyles = makeStyles((theme) => ({
 
 const SideNav = () => {
   const classes = useStyles();
+  const history = useHistory();
   return (
     <>
       <div className={classes.flexCol}>
-        <div className={classes.flexRow}>
+        <div
+          className={classes.flexRow}
+          onClick={() => {
+            history.push("/");
+          }}
+        >
           <span style={{ alignSelf: "flex-end" }}>
             <HomeIcon fontSize="large" />
           </span>
           <span className={classes.text}>Home</span>
         </div>
-        <div className={classes.flexRow}>
+        <div
+          className={classes.flexRow}
+          onClick={() => {
+            history.push("/coderoom");
+          }}
+        >
           <span>
             <CodeIcon fontSize="large" />
           </span>
           <span className={classes.text}>Peer Coding</span>
         </div>
-        <div className={classes.flexRow}>
+        <div
+          className={classes.flexRow}
+          onClick={() => {
+            history.push("/forums");
+          }}
+        >
           <span>
             <ForumIcon fontSize="large" />
           </span>

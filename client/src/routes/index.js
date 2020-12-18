@@ -6,6 +6,7 @@ import Profile from "../pages/Profile";
 import PeerCodeRoom from "../pages/PeerCodeRoom";
 import Forum from "../pages/Forum";
 import Route from "./Route";
+import ForumExplore from "../pages/ForumExplore";
 
 const Routes = () => {
   return (
@@ -14,7 +15,8 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/profile" component={Profile} />
-        <Route exact path="/forum" component={Forum} />
+        <Route exact path="/forums" component={ForumExplore} />
+        <Route exact path="/forum/id" component={Forum} />
         <Route exact path="/coderoom" component={PeerCodeRoom} />
       </Switch>
     </div>

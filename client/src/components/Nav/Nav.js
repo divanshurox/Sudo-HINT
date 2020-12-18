@@ -2,6 +2,7 @@ import React from "react";
 import { Avatar, Grid, makeStyles, MenuItem, Menu } from "@material-ui/core";
 import CodeLogo from "../../assets/code.svg";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   parent: {
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 const Nav = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
-
+  const history = useHistory();
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -86,7 +87,13 @@ const Nav = () => {
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
               >
-                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem
+                  onClick={() => {
+                    history.push("/profile");
+                  }}
+                >
+                  Profile
+                </MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
               </Menu>

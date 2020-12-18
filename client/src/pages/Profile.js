@@ -12,6 +12,8 @@ import PeopleIcon from "@material-ui/icons/People";
 import { makeStyles } from "@material-ui/core/styles";
 import img from "../assets/code.svg";
 import ReactMarkdown from "react-markdown";
+import Star from "../assets/star.svg";
+import Rating from "@material-ui/lab/Rating";
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -113,13 +115,14 @@ const Profile = () => {
         <Paper
           elevation={5}
           style={{
-            height: "500px",
+            height: "fit-content",
             borderRadius: 20,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "column",
             backgroundColor: "transparent",
+            padding: 20,
           }}
         >
           <img
@@ -149,9 +152,12 @@ const Profile = () => {
             <Container className={classes.profileContainer}>
               <PeopleIcon size="10" color="black" />
               <p>3 Following . 3 Followers</p>
-              <StarIcon size="10" color="black" />
-              <p>Upvotes</p>
             </Container>
+            <Container className={classes.profileContainer}>
+              <img src={Star} alt="star" />
+            </Container>
+            <span style={{ fontSize: "3rem" }}>1500</span>
+            <Rating value={3} />
           </Container>
         </Paper>
       </Grid>
@@ -159,44 +165,17 @@ const Profile = () => {
         <Paper
           elevation={5}
           style={{
-            height: "300px",
+            height: "fit-content",
             borderRadius: 20,
             backgroundColor: "transparent",
             justifyContent: "center",
             alignItems: "center",
-            padding: "20px 10px",
-            color: "white",
-          }}
-        >
-          <h1 style={{ paddingLeft: "50px" }}>Popular Answers</h1>
-          <Container
-            style={{
-              justifyContent: "center",
-              alignItems: "center",
-              display: "flex",
-              flexWrap: "wrap",
-            }}
-          >
-            {data.map((ele, i) => {
-              return (
-                <Cards key={i} language={ele.language} stars={ele.stars} />
-              );
-            })}
-          </Container>
-        </Paper>
-        <Paper
-          elevation={5}
-          style={{
-            height: "300px",
-            borderRadius: 20,
-            backgroundColor: "transparent",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 40,
+
             padding: "10px 20px",
             color: "white",
           }}
         >
+          <h1>README.md</h1>
           <ReactMarkdown>
             ### Hi there 👋 My name is [Aniket
             Biswas](https://www.linkedin.com/in/aniket-biswas-59394b191/). I'm a
@@ -217,6 +196,35 @@ const Profile = () => {
             The best way to learn programming you ask? Google it
             :stuck_out_tongue_closed_eyes:
           </ReactMarkdown>
+        </Paper>
+        <Paper
+          elevation={5}
+          style={{
+            height: "fit-content",
+            borderRadius: 20,
+            backgroundColor: "transparent",
+            justifyContent: "center",
+            alignItems: "center",
+            padding: "20px 10px",
+            color: "white",
+            marginTop: 40,
+          }}
+        >
+          <h1 style={{ paddingLeft: "50px" }}>Popular Answers</h1>
+          <Container
+            style={{
+              justifyContent: "center",
+              alignItems: "center",
+              display: "flex",
+              flexWrap: "wrap",
+            }}
+          >
+            {data.map((ele, i) => {
+              return (
+                <Cards key={i} language={ele.language} stars={ele.stars} />
+              );
+            })}
+          </Container>
         </Paper>
       </Grid>
     </Grid>

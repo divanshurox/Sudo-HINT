@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "../components/Layout/Layout";
 import {
   Grid,
@@ -7,6 +7,7 @@ import {
   makeStyles,
   Divider,
   Button,
+  Avatar,
 } from "@material-ui/core";
 
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
@@ -15,6 +16,7 @@ import BookmarksIcon from "@material-ui/icons/Bookmarks";
 import HistoryIcon from "@material-ui/icons/History";
 
 import MDEditor from "@uiw/react-md-editor";
+import ReactMarkdown from "react-markdown";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,6 +37,9 @@ const mkdStr = `# Your answer here!
 const Forum = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(mkdStr);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Layout>
@@ -54,7 +59,6 @@ const Forum = () => {
             <p>Asked 15 times</p>
           </div>
           <Divider
-            variant="middle"
             style={{
               backgroundColor: "#fff",
             }}
@@ -78,22 +82,28 @@ const Forum = () => {
             </Grid>
             <Grid container item xs={11}>
               <Grid item xs={12}>
-                <p>
-                  I made a new todo app, but you can't delete some f them. I
-                  tried a lot o stuff, but doesn't work :( I would also
-                  appreciate it if the "answerer" could give me a way to
-                  increase the character limit. I would also appreciate it if
-                  the "answerer" could also explain the reason of these errors.
-                  if you can, please help.
-                </p>
-                <div
-                  style={{
-                    backgroundColor: "#ccc",
-                    height: 500,
-                    width: "90%",
-                    overflowY: "scroll",
-                  }}
-                ></div>
+                <ReactMarkdown>
+                  ### Hi there 👋 My name is [Aniket
+                  Biswas](https://www.linkedin.com/in/aniket-biswas-59394b191/).
+                  I'm a Full Stack Web Developer and exploring various other
+                  technologies everyday. I am currently pursuing B.E. 💻 at
+                  [Thapar Institute of Engineering and
+                  Technology](https://thapar.edu)
+                  ![](https://komarev.com/ghpvc/?username=aniketbiswas21) Here's
+                  more about me - 🔭 I’m currently working on -
+                  [Pix](https://github.com/aniketbiswas21/Pix), [Buying Selling
+                  Platform](https://github.com/developer-student-club-thapar/buying_selling_devops)
+                  and [Thapar
+                  App](https://github.com/developer-student-club-thapar/thapar_app)
+                  - 🌱 I’m currently learning - ReactJS, NodeJS, GraphQL,
+                  Firebase, Typescript and Flutter. - 👯 I’m looking to
+                  collaborate on - MERN stack projects - 💬 Ask me about -
+                  Anything related to web technologies. :smiley: - 📫 How to
+                  reach me - aniket.biswas75@gmail.com - 😄 Pronouns - He/Him -
+                  ⚡ Fun fact - . The best way to learn programming you ask?
+                  Google it :stuck_out_tongue_closed_eyes: ```javascript const
+                  express = require("express");```
+                </ReactMarkdown>
               </Grid>
               <Grid
                 item
@@ -124,12 +134,15 @@ const Forum = () => {
                       alignItems: "center",
                     }}
                   >
+                    <Avatar alt="" />
                     <div
-                      style={{ height: 30, width: 30, backgroundColor: "#ccc" }}
-                    />
-                    <div style={{ alignItems: "center", display: "flex" }}>
-                      <p>licencenumber</p>
-                      <p>41</p>
+                      style={{
+                        alignItems: "center",
+                        display: "flex",
+                        padding: "0 1rem 0 1rem",
+                      }}
+                    >
+                      <p>username</p>
                     </div>
                   </div>
                 </div>
@@ -137,7 +150,6 @@ const Forum = () => {
             </Grid>
           </Grid>
           <Divider
-            variant="middle"
             style={{
               backgroundColor: "#fff",
               marginTop: "40px",
@@ -170,22 +182,28 @@ const Forum = () => {
             </Grid>
             <Grid container item xs={11}>
               <Grid item xs={12}>
-                <p>
-                  I made a new todo app, but you can't delete some f them. I
-                  tried a lot o stuff, but doesn't work :( I would also
-                  appreciate it if the "answerer" could give me a way to
-                  increase the character limit. I would also appreciate it if
-                  the "answerer" could also explain the reason of these errors.
-                  if you can, please help.
-                </p>
-                <div
-                  style={{
-                    backgroundColor: "#ccc",
-                    height: 500,
-                    width: "90%",
-                    overflowY: "scroll",
-                  }}
-                ></div>
+                <ReactMarkdown>
+                  ### Hi there 👋 My name is [Aniket
+                  Biswas](https://www.linkedin.com/in/aniket-biswas-59394b191/).
+                  I'm a Full Stack Web Developer and exploring various other
+                  technologies everyday. I am currently pursuing B.E. 💻 at
+                  [Thapar Institute of Engineering and
+                  Technology](https://thapar.edu)
+                  ![](https://komarev.com/ghpvc/?username=aniketbiswas21) Here's
+                  more about me - 🔭 I’m currently working on -
+                  [Pix](https://github.com/aniketbiswas21/Pix), [Buying Selling
+                  Platform](https://github.com/developer-student-club-thapar/buying_selling_devops)
+                  and [Thapar
+                  App](https://github.com/developer-student-club-thapar/thapar_app)
+                  - 🌱 I’m currently learning - ReactJS, NodeJS, GraphQL,
+                  Firebase, Typescript and Flutter. - 👯 I’m looking to
+                  collaborate on - MERN stack projects - 💬 Ask me about -
+                  Anything related to web technologies. :smiley: - 📫 How to
+                  reach me - aniket.biswas75@gmail.com - 😄 Pronouns - He/Him -
+                  ⚡ Fun fact - . The best way to learn programming you ask?
+                  Google it :stuck_out_tongue_closed_eyes: ```javascript const
+                  express = require("express");```
+                </ReactMarkdown>
               </Grid>
               <Grid
                 item
@@ -207,7 +225,7 @@ const Forum = () => {
                     padding: "5px 15px",
                   }}
                 >
-                  <h5 style={{ marginBottom: "0px" }}>asked 23 min ago</h5>
+                  <h5 style={{ marginBottom: "0px" }}>answered 23 min ago</h5>
                   <div
                     style={{
                       display: "flex",
@@ -216,12 +234,15 @@ const Forum = () => {
                       alignItems: "center",
                     }}
                   >
+                    <Avatar alt="" />
                     <div
-                      style={{ height: 30, width: 30, backgroundColor: "#ccc" }}
-                    />
-                    <div style={{ alignItems: "center", display: "flex" }}>
+                      style={{
+                        alignItems: "center",
+                        display: "flex",
+                        padding: "0 1rem 0 1rem",
+                      }}
+                    >
                       <p>licencenumber</p>
-                      <p>41</p>
                     </div>
                   </div>
                 </div>
