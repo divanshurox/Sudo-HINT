@@ -1,8 +1,17 @@
 import React from "react";
-import { Avatar, Grid, makeStyles, MenuItem, Menu } from "@material-ui/core";
+import {
+  Avatar,
+  Grid,
+  MenuItem,
+  Menu,
+  InputBase,
+  Button,
+} from "@material-ui/core";
+import { makeStyles, fade } from "@material-ui/core/styles";
 import CodeLogo from "../../assets/code.svg";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { useHistory } from "react-router-dom";
+import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
   parent: {
@@ -29,6 +38,46 @@ const useStyles = makeStyles((theme) => ({
     height: "auto",
     width: "3rem",
     objectFit: "contain",
+  },
+  search: {
+    position: "relative",
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      marginLeft: theme.spacing(1),
+      width: "auto",
+    },
+    display: "flex",
+    flexDirection: "row",
+  },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: "100%",
+    position: "absolute",
+    pointerEvents: "none",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  inputRoot: {
+    color: "inherit",
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create("width"),
+    width: "100%",
+    [theme.breakpoints.up("sm")]: {
+      width: "12ch",
+      "&:focus": {
+        width: "30ch",
+      },
+    },
   },
 }));
 
@@ -69,6 +118,29 @@ const Nav = () => {
             >
               <img src={CodeLogo} alt="logo" className={classes.logoImg} />
               <span className={classes.logo}>Sudo</span>
+            </Grid>
+            <Grid item xs={4}>
+              <div className={classes.search}>
+                <div className={classes.searchIcon}>
+                  <SearchIcon />
+                </div>
+                <InputBase
+                  placeholder="Search User"
+                  fullWidth
+                  classes={{
+                    root: classes.inputRoot,
+                    input: classes.inputInput,
+                  }}
+                  inputProps={{ "aria-label": "search" }}
+                />
+                <Button
+                  variant="outlined"
+                  size="small"
+                  onClick={() => history.push("/users")}
+                >
+                  Search
+                </Button>
+              </div>
             </Grid>
             <Grid
               item

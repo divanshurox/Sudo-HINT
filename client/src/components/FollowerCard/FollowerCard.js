@@ -23,6 +23,7 @@ const FollowerCard = () => {
         borderRadius: 10,
         marginBottom: 20,
         paddingBottom: 20,
+        width: "100%",
       }}
     >
       <Grid

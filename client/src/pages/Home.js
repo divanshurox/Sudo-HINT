@@ -67,7 +67,22 @@ const Home = () => {
           }}
           alt="upload"
         />
-        <input type="file" onChange={handleChange} />
+        <input
+          accept="image/*"
+          className={classes.input}
+          id="contained-button-file"
+          multiple
+          type="file"
+          style={{
+            display: "none",
+          }}
+          onChange={handleChange}
+        />
+        <label htmlFor="contained-button-file" style={{ marginLeft: 30 }}>
+          <Button variant="contained" color="primary" component="span">
+            Upload
+          </Button>
+        </label>
       </div>
       <form className={classes.form} noValidate autoComplete="off">
         <TextField
