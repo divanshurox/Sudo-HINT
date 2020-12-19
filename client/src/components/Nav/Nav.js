@@ -63,7 +63,7 @@ const Nav = () => {
               xs={4}
               style={{ display: "flex", cursor: "pointer" }}
               onClick={() => {
-                history.push("/");
+                history.push("/home");
               }}
             >
               <img src={CodeLogo} alt="logo" className={classes.logoImg} />

@@ -8,7 +8,17 @@ const ForumExplore = () => {
     <Layout>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <h1>Forums</h1>
+          <h1
+            style={{
+              fontSize: "4rem",
+              fontWeight: 800,
+              background: "-webkit-linear-gradient(-70deg,#a2facf,#64acff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Forums
+          </h1>
         </Grid>
         <Grid item xs={12}>
           <ForumExploreCard />

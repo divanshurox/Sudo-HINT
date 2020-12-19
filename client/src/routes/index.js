@@ -9,13 +9,15 @@ import Route from "./Route";
 import ForumExplore from "../pages/ForumExplore";
 import LearningPath from "../pages/LearningPath";
 import LearningPathDetail from "../pages/LearningPathDetail";
+import Login from "../pages/Login";
 
 const Routes = () => {
   return (
     <div>
       <Nav />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Login} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/profile" component={Profile} />
         <Route exact path="/forums" component={ForumExplore} />
         <Route exact path="/forum/id" component={Forum} />
