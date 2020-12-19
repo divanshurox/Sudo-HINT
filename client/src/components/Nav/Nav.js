@@ -58,7 +58,14 @@ const Nav = () => {
             style={{ height: "70px", placeItems: "center" }}
             justify="space-between"
           >
-            <Grid item xs={4} style={{ display: "flex" }}>
+            <Grid
+              item
+              xs={4}
+              style={{ display: "flex", cursor: "pointer" }}
+              onClick={() => {
+                history.push("/");
+              }}
+            >
               <img src={CodeLogo} alt="logo" className={classes.logoImg} />
               <span className={classes.logo}>Sudo</span>
             </Grid>

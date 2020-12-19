@@ -147,6 +147,28 @@ const Forum = () => {
                   </div>
                 </div>
               </Grid>
+
+              <Grid item xs={12} style={{ marginTop: "1rem" }}>
+                <Divider
+                  style={{
+                    backgroundColor: "#fff",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} style={{ marginTop: "0.8rem" }}>
+                This is a comment
+              </Grid>
+
+              <Grid item xs={12} style={{ marginTop: "1rem" }}>
+                <Divider
+                  style={{
+                    backgroundColor: "#fff",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} style={{ marginTop: "0.8rem" }}>
+                This is a comment
+              </Grid>
             </Grid>
           </Grid>
           <Divider
@@ -159,9 +181,10 @@ const Forum = () => {
           <p
             style={{
               paddingLeft: "20px",
+              fontSize: "1.6rem",
             }}
           >
-            One Answer
+            1 Answers
           </p>
           <Grid container spacing={2} style={{ marginTop: 10 }}>
             <Grid
@@ -247,8 +270,18 @@ const Forum = () => {
                   </div>
                 </div>
               </Grid>
+              <Grid item xs={12} style={{ marginTop: "1rem" }}>
+                <Divider
+                  style={{
+                    backgroundColor: "#fff",
+                  }}
+                />
+              </Grid>
+              <Grid item xs={12} style={{ marginTop: "0.8rem" }}>
+                This is a comment
+              </Grid>
               <Grid item xs={12}>
-                <p>Your Answer</p>
+                <p style={{ fontSize: "1.6rem" }}>Your Answer</p>
                 <MDEditor value={value} onChange={setValue} />
                 <Button
                   variant="contained"
