@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Avatar,
   Grid,
@@ -11,6 +11,8 @@ import { makeStyles, fade } from "@material-ui/core/styles";
 import CodeLogo from "../../assets/code.svg";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../redux/actions";
 import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles((theme) => ({
