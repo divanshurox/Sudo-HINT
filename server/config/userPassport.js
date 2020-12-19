@@ -14,10 +14,13 @@ passport.use(
     },
     async function (accessToken, refreshToken, profile, done) {
       const user = await User.findOne({ githubId: profile.id });
+      // console.log(profile);
       if (user) {
         return done(null, user);
       }
       const newUser = new User({
+        displayName: profile.displayName,
+        username: profile.username,
         email: profile._json.email,
         githubId: profile.id,
         avatar_url: profile._json.avatar_url,
