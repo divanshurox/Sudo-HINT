@@ -18,6 +18,8 @@ app.use(
 // * Route imports
 const auth = require("./routes/Auth");
 const user = require("./routes/User");
+const questions = require("./routes/Questions");
+const tag = require("./routes/tag");
 
 // * DB
 mongoose.connect(
@@ -41,6 +43,8 @@ app.use(passport.session());
 // * Routes
 app.use("/api/auth", auth);
 app.use("/api/user", user);
+app.use("/api/questions", questions);
+app.use("/api/tag", tag);
 
 // * Server
 const port = process.env.PORT || 5000;
