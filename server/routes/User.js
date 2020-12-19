@@ -4,8 +4,12 @@ const isAuthenticated = require("../Middleware/isAuthenticated");
 const User = require("../models/User");
 
 // * get profile
-router.get("/profile", isAuthenticated, (req, res) => {
-  res.send(req.user);
+router.get("/profile", isAuthenticated, async (req, res) => {
+  const user = await User.findById(req.user._id);
+  const stars = user.stars;
+  const newuser = { ...user.toObject(), stars };
+  console.log(newuser);
+  res.status(200).json({ success: true, data: newuser });
 });
 
 // * Follow a user by id

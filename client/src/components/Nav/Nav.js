@@ -85,6 +85,9 @@ const Nav = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const history = useHistory();
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -92,6 +95,10 @@ const Nav = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    dispatch(loginUser());
+  }, []);
   return (
     <>
       <Grid
