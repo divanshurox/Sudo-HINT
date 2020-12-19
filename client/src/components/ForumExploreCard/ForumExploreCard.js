@@ -9,11 +9,15 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100px",
     height: "fit-content",
     padding: "0.8rem",
+    "&:hover": {
+      transform: "scale(1.1)",
+      transition: "all 0.2s linear",
+    },
   },
   flexCol: {
     display: "flex",
     flexDirection: "column",
-    margin: "1rem .5rem 0 0",
+    margin: "0 .5rem 0 0",
   },
   flexRow: {
     display: "flex",
@@ -40,7 +44,7 @@ const ForumExploreCard = () => {
     <>
       <Grid
         container
-        spacing={2}
+        spacing={4}
         onClick={() => {
           history.push("/forum/id");
         }}

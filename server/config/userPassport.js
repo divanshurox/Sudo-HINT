@@ -17,6 +17,7 @@ passport.use(
       if (user) {
         return done(null, user);
       }
+      console.log(profile);
       const newUser = new User({
         email: profile._json.email,
         githubId: profile.id,
@@ -36,6 +37,6 @@ passport.serializeUser((user, done) => {
 
 // * Passport deserializeUser
 passport.deserializeUser(async (id, done) => {
-  const user = await User.findById();
+  const user = await User.findById(id);
   done(null, user);
 });

@@ -101,8 +101,9 @@ const Forum = () => {
                   Anything related to web technologies. :smiley: - 📫 How to
                   reach me - aniket.biswas75@gmail.com - 😄 Pronouns - He/Him -
                   ⚡ Fun fact - . The best way to learn programming you ask?
-                  Google it :stuck_out_tongue_closed_eyes: ```javascript const
-                  express = require("express");```
+                  Google it :stuck_out_tongue_closed_eyes: ```js var React =
+                  require('react'); var Markdown = require('react-markdown');
+                  React.render( document.getElementById('content') ); ```
                 </ReactMarkdown>
               </Grid>
               <Grid

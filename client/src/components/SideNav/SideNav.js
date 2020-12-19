@@ -70,7 +70,12 @@ const SideNav = () => {
           </span>
           <span className={classes.text}>Forums</span>
         </div>
-        <div className={classes.flexRow}>
+        <div
+          className={classes.flexRow}
+          onClick={() => {
+            history.push("/learningpath");
+          }}
+        >
           <span>
             <GestureIcon fontSize="large" />
           </span>

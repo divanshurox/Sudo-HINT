@@ -8,7 +8,7 @@ const ForumExplore = () => {
     <Layout>
       <Grid container spacing={2}>
         <Grid item xs={12}>
-          <h2>Forums</h2>
+          <h1>Forums</h1>
         </Grid>
         <Grid item xs={12}>
           <ForumExploreCard />
