@@ -4,6 +4,7 @@ import HomeIcon from "@material-ui/icons/Home";
 import CodeIcon from "@material-ui/icons/Code";
 import ForumIcon from "@material-ui/icons/Forum";
 import GestureIcon from "@material-ui/icons/Gesture";
+import ImportContactsIcon from "@material-ui/icons/ImportContacts";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
@@ -69,6 +70,17 @@ const SideNav = () => {
             <ForumIcon fontSize="large" />
           </span>
           <span className={classes.text}>Forums</span>
+        </div>
+        <div
+          className={classes.flexRow}
+          onClick={() => {
+            history.push("/articles");
+          }}
+        >
+          <span>
+            <ImportContactsIcon fontSize="large" />
+          </span>
+          <span className={classes.text}>Articles</span>
         </div>
         <div
           className={classes.flexRow}
