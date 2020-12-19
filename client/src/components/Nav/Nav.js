@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Avatar, Grid, makeStyles, MenuItem, Menu } from "@material-ui/core";
 import CodeLogo from "../../assets/code.svg";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import { useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../../redux/actions";
 
 const useStyles = makeStyles((theme) => ({
   parent: {
@@ -36,6 +38,9 @@ const Nav = () => {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const history = useHistory();
+  const dispatch = useDispatch();
+  const auth = useSelector((state) => state.auth);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -43,6 +48,10 @@ const Nav = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  useEffect(() => {
+    dispatch(loginUser());
+  }, []);
   return (
     <>
       <Grid

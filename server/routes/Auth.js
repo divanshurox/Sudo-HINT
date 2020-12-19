@@ -24,7 +24,7 @@ router.get("/login/callback", (req, res, next) => {
           return next(err);
         }
 
-        return res.send(user);
+        return res.redirect(`${process.env.CLIENT_URL}/home`);
       });
     }
   )(req, res, next);

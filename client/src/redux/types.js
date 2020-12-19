@@ -3,3 +3,5 @@ export const CREATE_NEW_FILE = "CREATE_NEW_FILE";
 export const SET_ACTIVE_FILE = "SET_ACTIVE_FILE";
 export const CLEAR_ACTIVE_FILE = "CLEAR_ACTIVE_FILE";
 export const WRITE_CODE = "WRITE_CODE";
+export const LOGIN_USER = "LOGIN_USER";
+export const LOGIN_ERROR = "LOGIN_ERROR";
