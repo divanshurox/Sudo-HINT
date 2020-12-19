@@ -11,6 +11,7 @@ passport.use(
       clientID: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
       callbackURL: "http://localhost:5000/api/auth/login/callback",
+      scope: "user:email",
     },
     async function (accessToken, refreshToken, profile, done) {
       const user = await User.findOne({ githubId: profile.id });
@@ -22,7 +23,7 @@ passport.use(
       const newUser = new User({
         displayName: profile.displayName,
         username: profile.username,
-        email: profile._json.email,
+        email: profile.emails[0].value,
         githubId: profile.id,
         avatar_url: profile._json.avatar_url,
         bio: profile._json.bio,

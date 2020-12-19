@@ -19,7 +19,7 @@ app.use(
 const auth = require("./routes/Auth");
 const user = require("./routes/User");
 const questions = require("./routes/Questions");
-const tag = require("./routes/tag");
+const tag = require("./routes/Tag");
 
 // * DB
 mongoose.connect(

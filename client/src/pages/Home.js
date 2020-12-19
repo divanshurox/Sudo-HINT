@@ -11,10 +11,17 @@ const useStyles = makeStyles((theme) => ({
     width: "70%",
     height: "70%",
     backgroundColor: "#161b22",
-    border: "2px solid #000",
+    // border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     borderRadius: 10,
+    outline: "none",
+    "&:focus": {
+      outline: "none",
+    },
+  },
+  input: {
+    color: "#fff",
   },
 }));
 
@@ -58,6 +65,7 @@ const Home = () => {
             width: 200,
             borderRadius: 10,
           }}
+          alt="upload"
         />
         <input type="file" onChange={handleChange} />
       </div>
@@ -74,9 +82,10 @@ const Home = () => {
           onFocus={() => setFocus(false)}
           onBlur={() => setFocus(true)}
           style={{
-            border: focus && "1px solid #fff",
+            outline: focus && "none",
             borderRadius: 10,
             color: "white",
+            border: focus && "1px solid #fff",
           }}
           InputProps={{
             classes: classes.input,
@@ -92,7 +101,7 @@ const Home = () => {
         }}
       >
         <Button variant="contained" size="large">
-          Post the Question
+          Post
         </Button>
       </div>
     </div>
