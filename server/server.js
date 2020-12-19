@@ -20,6 +20,7 @@ const auth = require("./routes/Auth");
 const user = require("./routes/User");
 const questions = require("./routes/Questions");
 const tag = require("./routes/Tag");
+const post = require("./routes/Post");
 
 // * DB
 mongoose.connect(
@@ -45,6 +46,7 @@ app.use("/api/auth", auth);
 app.use("/api/user", user);
 app.use("/api/questions", questions);
 app.use("/api/tag", tag);
+app.use("/api/post", post);
 
 // * Server
 const port = process.env.PORT || 5000;
