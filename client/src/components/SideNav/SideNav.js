@@ -40,7 +40,7 @@ const SideNav = () => {
         <div
           className={classes.flexRow}
           onClick={() => {
-            history.push("/");
+            history.push("/home");
           }}
         >
           <span style={{ alignSelf: "flex-end" }}>
